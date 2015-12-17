@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width, initial-scale=1">
+  <title>lostnfound</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="well">
+        <h1>Welcome to Meteor!</h1>
+      </div>
+    </div>
+    {{> hello}}
+  </div>
+</body>
+
+<template name="hello">
+  <div class="row well">
+    <div class="span6">
+      <button type="button" class="btn btn-primary">Click Me</button>
+    </div>
+    <div class="span6">
+      <p>You've pressed the button {{counter}} times.</p>
+    </div>
+  </div>
+</template>
