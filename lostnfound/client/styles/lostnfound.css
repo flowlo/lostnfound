@@ -1,1 +1,48 @@
 /* CSS declarations go here */
+html,body, .container{
+    background-color: #e8e8e8;
+    height: 100%;
+}
+
+.height_90{
+    height: 85%;
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    height: 30%;
+    width: 80%;
+    margin: -15% 0 0 -25%;
+}
+
+h1,h2,h3,h4,h5{
+    margin: 15px;
+}
+
+button{
+    width: 300px;
+    margin: 20px 20px;
+}
+
+#lost_main{
+    background-color: #9bc0e6;
+}
+
+#found_main{
+    background-color: #ffb74a;
+}
+
+#lost_items{
+
+}
+
+#found_item{
+
+}
+
+#events_list{
+
+}
