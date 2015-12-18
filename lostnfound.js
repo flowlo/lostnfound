@@ -82,7 +82,6 @@ function itemNode(item) {
 }
 
 function itemClick(element) {
-
 	var alias = $("#validation_popup");
 	alias.modal();
 
@@ -118,27 +117,26 @@ function keydown(event, page){
 	}
 }
 
-function submitSub(){
-	$('#err')[0].style.color = "red";
-	$('#err')[0].textContent = "";
-	var email = $('#email')[0];
-	if (email.checkValidity()) {
+function submitSub() {
+	if (document.getElementById('#email').checkValidity()) {
+		$('#err')[0].textContent = "";
 		$('#subscribe_popup').modal('hide');
 		$('#subscription_success').modal('show');
-	} else {
-		$('#err')[0].textContent = "Email not valid.";
+		return;
 	}
+
+	$('#err')[0].textContent = "Email not valid.";
 }
 
-function submitMain(omniValue){
+function submitMain(omniValue) {
 	if (window.location.hash == '#lost') {
 		window.location.href = 'items.html#' + omniValue;
-	} else if (window.location.hash == '#found'){
+	} else if (window.location.hash == '#found') {
 		window.location.href = 'found.html#' + omniValue;
 	}
 }
 
-function submitAnswer(){
+function submitAnswer() {
 	var alias = $('#validation_popup');
 	var dataset = alias[0].dataset;
 	var answer = $('#answer')[0].value;

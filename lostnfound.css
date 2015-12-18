@@ -44,17 +44,8 @@ div#choose {
 	padding-bottom: 30%;
 }
 
-a{
-	font-style: italic;
-	cursor: pointer;
-}
-
-.back{
+.back {
 	font-size: 120%;
-}
-
-h1,h2,h3,h4,h5,h6{
-	font-style: italic;
 }
 
 div#search {
@@ -93,6 +84,8 @@ div#items {
 	max-width: 500px;
 	left: 50%;
 	margin-left: -250px;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 div.item {
@@ -100,6 +93,8 @@ div.item {
 	width: 100%;
 	height: 100px;
 	border: 2px solid #eee;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
 
 div.item img {
@@ -123,12 +118,50 @@ div.item p {
 }
 
 div.item p:first-child {
-	position: absolute;
-	display: block;
 	top: 0;
-	left: 100px;
 	height: 60px;
-	width: auto;
-	padding: 10px;
-	margin: 0;
+}
+
+#err {
+	color: red;
+}
+
+body#found form input {
+	display: block;
+	width: 100%;
+}
+
+
+body#found form textarea {
+	display: block;
+	width: 100%;
+}
+
+body#found form label.normal-mode span.shortLabel {
+	display: block;
+
+	font-size: 12pt;
+	font-weight: normal;
+
+	color: gray;
+
+	margin: 5px 0;
+}
+
+body#found form label.normal-mode span.detailedLabel,
+body#found form label.verbose-mode span.shortLabel {
+	display: none;
+}
+
+body#found form label.verbose-mode span.detailedLabel {
+	display: block;
+
+	font-size: 12pt;
+	font-weight: normal;
+
+	color: gray;
+}
+
+body#found form label span.glyphicon {
+	cursor: pointer;
 }
