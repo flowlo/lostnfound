@@ -3,15 +3,54 @@
 <head>
 	<meta charset="utf-8">
 	<title>lost'n'found</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="lostnfound.css" />
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="lostnfound.js"></script>
 </head>
 <body onload="renderItems()">
-	<header>lost'n'found</header>
-	<div id="subscribe">Your item is not listed? Subscribe to this event to get notified as more items are found!</div>
-	<div id="items"></div>
-	<footer>
-		Report a Problem &middot; Legals
-	</footer>
+<header>lost'n'found</header>
+<div id="subscribe">Your item is not listed? Subscribe to this event to get notified as more items are found!</div>
+<div id="items"></div>
+<footer>
+	Report a Problem &middot; Legals
+</footer>
+
+<div id="validation_popup" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="row well">
+			<div class="span6">
+				<h2 class="text-center">Validate yourself</h2>
+				<p id="question_holder" class="text-center"></p>
+				<div class="form-group">
+					<input id="answer" autofocus class="form-control" type="text" onkeydown="keydown(event)"/>
+				</div>
+				<button class="btn btn-block btn-success" onclick="submitAnswer()">Check</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="you_won_popup" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="row well">
+			<div class="span6">
+				<h2 class="text-center">Congrats you successfully validated yourself, the finder's data:</h2>
+				<h4 id="contact" class="text-center"></h4>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="you_lost_popup" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="row well">
+			<div class="span6">
+				<h2 class="text-center">Wrong answer!</h2>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>

@@ -36,7 +36,7 @@ var items = [
 	item('Braune Geldbörse (incl. eCard und Führerschein) leider ohne Bargeld', ['In welchem Jahr wurde der Führerschein ausgestellt?', 'Wie lautet die Sozialversicherungsnummer auf der E-Card?'], ['123456', '123456'], 'Bitte schreib\' mir eine E-Mail an finder@example.com! Bin erst wieder ab 6. Jänner in Wien!', '2015-12-17'),
 	item('Olivgrüne Jacke', ['Von welcher Marke ist die Jacke?'], ['DKNY'], 'Bin unter \'Die Finderin\' auf Facebook, einfach anschreiben!', '2015-12-18', 'http://lorempixel.com/100/100/abstract/'),
 
-]
+];
 
 function item(description, questions, answers, contact, date, picture) {
 	return {
@@ -77,22 +77,59 @@ function itemNode(item) {
 }
 
 function itemClick(element) {
+
+	var alias = $("#validation_popup");
+	alias.modal();
+
 	var item = JSON.parse(element.dataset.item);
 
+	alias[0].dataset.item = element.dataset.item;
+
 	if (item.questions.length !== item.answers.length) {
-		console.log('Number of questions does not match number of answers!');
+		console.warn('Number of questions does not match number of answers!');
 		return;
 	}
 
-	for (var i = 0; i < item.questions.length; i++){
-		if (prompt(item.questions[i]) !== item.answers[i]) {
-			alert('Wrong answer!');
-			return;
-		}
+	if (alias[0].dataset.item.length > 0) {
+		setQuestion(0, item);
 	}
-
-	alert(item.contact);
 }
+
+function setQuestion(index, item){
+	$('#answer')[0].value = "";
+	$("#validation_popup")[0].dataset.index = index;
+	$("#question_holder")[0].textContent = item.questions[index];
+}
+
+function keydown(event){
+	if (event.keyCode == 13){
+		submitAnswer();
+	}
+}
+
+function submitAnswer(){
+	var alias = $('#validation_popup');
+	var dataset = alias[0].dataset;
+	var answer = $('#answer')[0].value;
+	var index = dataset.index;
+	var item = JSON.parse(dataset.item);
+
+	if (answer == item.answers[index]){
+		index++;
+		if (index < item.questions.length){
+			alias[0].dataset.index++;
+			setQuestion(index, item);
+		} else {
+			alias.modal('hide');
+			$('#contact')[0].textContent = item.contact;
+			$('#you_won_popup').modal('show');
+		}
+	} else {
+		alias.modal('hide');
+		$('#you_lost_popup').modal('show');
+	}
+}
+
 
 function paragraph(textContent) {
 	var node = document.createElement('p');
