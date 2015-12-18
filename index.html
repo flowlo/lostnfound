@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="lostnfound.js"></script>
 </head>
-<body onload="chooser()">
+<body onload="chooser()" onpopstate="chooser()">
 	<header>lost'n'found</header>
 	<div id="choose">
 		Hello there! What brings you here?<br /><br />
@@ -24,9 +24,6 @@
 			<option value="Dreistil @ The Loft">
 			<option value="Heartbreak Hotel @ U4">
 		</datalist>
-        <div class="text-center">
-            <a class="back" href="index.html">Back</a>
-        </div>
 	</div>
 	<footer>
 		<a href="mailto:problem@lostnfound.nope?Subject=LostnFound%20Problem">Report a Problem</a> &middot; Legals

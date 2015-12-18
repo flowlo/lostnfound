@@ -16,10 +16,9 @@
 	<a id="subscribe" data-target="#subscribe_popup" data-toggle="modal">
 		Your item is not listed? Subscribe to this event to get notified as more items are found!</a>
 </div>
+
 <div id="items"></div>
-<div class="text-center">
-	<a class="back" href="index.html">Back</a>
-</div>
+
 <footer>
 	<a href="mailto:problem@lostnfound.nope?Subject=LostnFound%20Problem">Report a Problem</a> &middot; Legals
 </footer>
@@ -46,7 +45,7 @@
 				<h2 class="text-center">Subscribe to the event to get notifications about newly found items.</h2>
 				<div class="form-group">
 					<input id="email" autofocus placeholder="Enter your Email" class="form-control"
-						   type="email" onkeydown="keydown(event, 'subscribe')"/>
+						type="email" onkeydown="keydown(event, 'subscribe')"/>
 				</div>
 				<p id="err"></p>
 				<button class="btn btn-block btn-success" onclick="submitSub()">Subscribe</button>

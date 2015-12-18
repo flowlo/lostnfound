@@ -39,7 +39,7 @@ var items = [
 
 function item(event, description, questions, answers, contact, date, picture) {
 	return {
-		event : event,
+		event: event,
 		description: description,
 		questions: questions,
 		answers: answers,
@@ -50,7 +50,6 @@ function item(event, description, questions, answers, contact, date, picture) {
 }
 
 function renderItems() {
-
 	var event = window.location.hash.substring(1);
 	$('#items_header')[0].textContent += event;
 
@@ -122,12 +121,8 @@ function keydown(event, page){
 function submitSub(){
 	$('#err')[0].style.color = "red";
 	$('#err')[0].textContent = "";
-	var email = $('#email')[0].value;
-	function validateEmail(email) {
-		var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return re.test(email);
-	}
-	if (validateEmail(email)) {
+	var email = $('#email')[0];
+	if (email.checkValidity()) {
 		$('#subscribe_popup').modal('hide');
 		$('#subscription_success').modal('show');
 	} else {
