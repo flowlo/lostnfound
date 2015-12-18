@@ -33,8 +33,8 @@ function chooser(hash) {
 }
 
 var items = [
-	item('K.I.Z. @ Gasometer', 'Braune Geldbörse (incl. eCard und Führerschein) leider ohne Bargeld', ['In welchem Jahr wurde der Führerschein ausgestellt?', 'Wie lautet die Sozialversicherungsnummer auf der E-Card?'], ['123456', '123456'], 'Bitte schreib\' mir eine E-Mail an finder@example.com! Bin erst wieder ab 6. Jänner in Wien!', '2015-12-17'),
-	item('K.I.Z. @ Gasometer', 'Olivgrüne Jacke', ['Von welcher Marke ist die Jacke?'], ['DKNY'], 'Bin unter \'Die Finderin\' auf Facebook, einfach anschreiben!', '2015-12-18', 'http://lorempixel.com/100/100/abstract/'),
+	item('K.I.Z. @ Gasometer', 'Braune Geldbörse (incl. eCard und Führerschein) leider ohne Bargeld', ['In welchem Jahr wurde der Führerschein ausgestellt?', 'Wie lautet die Sozialversicherungsnummer auf der E-Card?'], ['123456', '123456'], 'Bitte schreib\' mir eine E-Mail an finder@example.com! Bin erst wieder ab 6. Jänner in Wien!', '2015-12-17', 'pictures/wallet.jpg'),
+	item('K.I.Z. @ Gasometer', 'Olivgrüne Jacke', ['Von welcher Marke ist die Jacke?'], ['DKNY'], 'Bin unter \'Die Finderin\' auf Facebook, einfach anschreiben!', '2015-12-18', 'pictures/jacket.jpg'),
 ];
 
 function item(event, description, questions, answers, contact, date, picture) {
@@ -76,7 +76,7 @@ function itemNode(item) {
 	};
 
 	div.appendChild(paragraph(item.description));
-	div.appendChild(paragraph(item.date));
+	div.appendChild(paragraph('Found on: ' + item.date));
 
 	if (item.picture) {
 		var img = document.createElement('img');
