@@ -8,24 +8,22 @@ html, body {
 
 footer {
 	display: block;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 3%;
-	padding: 10px;
+	position: relative;
+	width: calc(100% - 20px);
+	margin: 10px;
 	text-align: center;
 	background-color: white;
 }
 
 header {
 	display: block;
-	position: absolute;
+	position: relative;
 	top: 10%;
 	font-size: 300%;
 	font-weight: bold;
-	width: 100%;
+	width: calc(100% - 40px);
 	text-align: center;
+	margin: 20px;
 }
 
 input#omni {
@@ -36,23 +34,23 @@ input#omni {
 }
 
 div#choose {
-	position: absolute;
-	top: 35%;
-	left: 0;
+	position: relative;
 	width: 100%;
 	text-align: center;
 	line-height: 200%;
 	font-size: 150%;
 	font-style: italic;
+	padding-top: 20%;
+	padding-bottom: 30%;
 }
 
 div#search {
-	position: absolute;
-	top: 35%;
-	left: 0;
+	position: relative;
 	width: 100%;
 	text-align: center;
 	display: none;
+	padding-top: 20%;
+	padding-bottom: 30%;
 }
 
 .stack {
@@ -67,8 +65,16 @@ div#search {
 	text-decoration: none;
 }
 
+div#subscribe {
+	position: relative;
+	margin: 10px;
+	font-style: italic;
+	width: calc(100% - 20px);
+	text-align: center;
+}
+
 div#items {
-	position: absolute;
+	position: relative;
 	top: 30%;
 	width: 70%;
 	max-width: 500px;
