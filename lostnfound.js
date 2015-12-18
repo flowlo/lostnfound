@@ -51,8 +51,8 @@ function item(event, description, questions, answers, contact, date, picture) {
 
 function renderItems() {
 
-	$('#items_header')[0].textContent = window.location.hash;
 	var event = window.location.hash.substring(1);
+	$('#items_header')[0].textContent += event;
 
 	var parent = document.getElementById('items');
 	for (var i = 0; i < items.length; i++) {
@@ -118,7 +118,9 @@ function keydown(event, page){
 }
 
 function submitMain(omniValue){
-	window.location.href = 'items.html#' + omniValue;
+	if (window.location.hash == '#lost') {
+		window.location.href = 'items.html#' + omniValue;
+	}
 }
 
 function submitAnswer(){
