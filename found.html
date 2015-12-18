@@ -12,64 +12,48 @@
 
 <body id="found" onload="loadFound()">
 <header>lost'n'found</header>
-  <header id="header">I Found Something at </header>
-  <div class="container">
-    <form class="well form-group">
-      <div class="row">
-        <label for="description" class="normal-mode">
-          <span class="shortLabel">
-            Shortly describe what you've found
-            <span class="glyphicon glyphicon-info-sign"
-                  data-toggle="popover"
-                  data-placement="top"
-                  data-content="Give a short description on what you have found.This helps the owner getting the lost item back..."></span>
-          </span>
-        </label>
-        <input id="description" class="form-control" type="text", placeholder="Shortly describe what you've found..">
-      </div>
-      <div id="validationQuestions">
-        <div class="row validation">
-            <label for="description" class="normal-mode">
-              <span class="shortLabel">
-                Ask a Question
-                <span class="glyphicon glyphicon-info-sign" data-toggle="popover"
-                      data-placement="top"
-                      data-content="Give a short description on what you have found.This helps the owner getting the lost item back..."></span>
-              </span>
-            </label>
-            <input id="q0" class="form-control" type="text", placeholder="Ask something only the owner knows. E.g. ID-number in case of a lost ID." required>
+<header id="header">I Found Something at </header>
+<form>
+	<div class="attr">
+	<h5>Shortly describe what you've found</h5>
+	<small>Give a short description on what you have found. This helps the owner identifying the item. For example: <i>Black Wallet</i>, or <i>Brown Jacket</i></small>
+	<input id="description" class="form-control" type="text", placeholder="Short Description">
+	</div>
 
-            <label for="description" class="normal-mode">
-              <span class="shortLabel ">
-                Validation Answer
-              <span class="glyphicon glyphicon-info-sign" data-toggle="popover"
-                    data-placement="top"
-                    data-content="Answer to the validation Question.E.g. ID-nr or birthday, in case of a lost ID."></span>
-              </span>
-              </label>
-              <input id="a0" class="form-control" type="text", placeholder="Answer to the validation Question." onchange="validateQuestions()" required>
-          </div>
-        </div>
-        <div class="row">
-          <span id="add" class="glyphicon glyphicon-plus hide"  onclick="addQuestion(this)"></span>
-        </div>
+	<div class="attr">
+	<h5>Owner Validation</h5>
+	<small>In order to make sure the person claiming the item is the legitimate owner, you have to come up with one (or multiple) question(s) that only the owner can answer. If you find an ID, ask for personal infromation. Note that this will also protect your contact information, as only users who can answer those questions will get to access your contact details.</small>
 
-      <div class="row">
-        <label for="info" class="normal-mode">
-          <span class="shortLabel">
-            Contact info for successfuly validated users
-            <span class="glyphicon glyphicon-info-sign"data-toggle="popover"
-                  data-placement="top"
-                  data-content="Tell the owner how to contact you.This Message will be shown if someone answers all validation questions correctly."></span>
-          </span>
-          <textarea id="info" class="form-control" name="info" placeholder="Tell the owner how to contact you. This Message will be shown if someone answers all validation questions correctly." required></textarea>
-        </label>
-      </div>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>Question</th><th>Answer</th>
+				</tr>
+			</thead>
+			<tbody id="validationQuestions">
+				<tr>
+					<td><input id="q0" class="form-control" type="text", placeholder="" required>
+					</td><td>
+				<input id="a0" class="form-control" type="text", placeholder="Answer to the validation Question." onchange="validateQuestions()" required></td>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<span id="add" class="glyphicon glyphicon-plus hide"	onclick="addQuestion(this)"></span>
+	</div>
+</div>
 
-      <div class="row">
-        <input type="submit" class="form-control btn btn-success" value="Submit"/>
-      </div>
-    </form>
-  </div>
+	<div class="attr">
+	<h5>Contact Information</h5>
+	<small>Tell the owner how to contact you. This Message will be shown if all validation questions were answered correctly.</small>
+
+	<textarea id="info" class="form-control" name="info" placeholder="Enter instructions to contact you. For example your e-mail address, or a phone number." required></textarea>
+</div>
+
+	<div class="row">
+		<input type="submit" class="form-control btn btn-success" value="Submit"/>
+	</div>
+</form>
 </body>
 </html>

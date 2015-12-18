@@ -168,3 +168,20 @@ body#found form label span.glyphicon {
 #question_holder, #contact {
 	font-style: italic;
 }
+
+form {
+	display: block;
+	position: relative;
+	width: 70%;
+	padding-left: 15%;
+}
+
+div.attr {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+th {
+	font-weight: normal;
+}

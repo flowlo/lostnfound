@@ -24,8 +24,7 @@ function addQuestion(){
     validationQuestions++;
     var validationContainer = document.getElementById('validationQuestions');
 
-    var row = document.createElement('div');
-    row.className="row validation";
+    var row = document.createElement('tr');
     validationContainer.appendChild(row);
 
     var question = document.createElement('input');
@@ -35,16 +34,24 @@ function addQuestion(){
     question.addEventListener('change',validateQuestions, false);
     question.placeholder="Ask something only the owner knows. E.g. ID-number in case of a lost ID.";
 
-    row.appendChild(question);
+    var td = document.createElement('td');
+    td.appendChild(question);
+
+    row.appendChild(td);
 
     var answer = document.createElement('input');
     answer.id="a"+validationQuestions;
     answer.className += 'form-control';
     answer.placeholder="Answer to the validation Question.";
     answer.addEventListener('change',validateQuestions, false);
-    row.appendChild(answer);
+
 
     document.getElementById('add').classList.add('hide');
+
+    td = document.createElement('td');
+    td.appendChild(answer);
+
+    row.appendChild(td);
 }
 
 
