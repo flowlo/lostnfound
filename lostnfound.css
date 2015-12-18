@@ -89,23 +89,23 @@ div.item img {
 	border: none;
 }
 
-div.item p.description {
-	position: absolute;
-	display: block;
-	top: 0;
-	left: 100px;
-	height: 60px;
-	width: auto;
-	padding: 10px;
-	margin: 0;
-}
-
-div.item p.date {
+div.item p {
 	position: absolute;
 	display: block;
 	top: 60px;
 	left: 100px;
 	height: 40px;
+	width: auto;
+	padding: 10px;
+	margin: 0;
+}
+
+div.item p:first-child {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 100px;
+	height: 60px;
 	width: auto;
 	padding: 10px;
 	margin: 0;
