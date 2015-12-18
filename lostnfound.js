@@ -113,7 +113,25 @@ function keydown(event, page){
 			submitMain($("#omni")[0].value);
 		} else if (page == 'items') {
 			submitAnswer();
+		} else if (page == 'subscribe'){
+			submitSub();
 		}
+	}
+}
+
+function submitSub(){
+	$('#err')[0].style.color = "red";
+	$('#err')[0].textContent = "";
+	var email = $('#email')[0].value;
+	function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
+	if (validateEmail(email)) {
+		$('#subscribe_popup').modal('hide');
+		$('#subscription_success').modal('show');
+	} else {
+		$('#err')[0].textContent = "Email not valid.";
 	}
 }
 

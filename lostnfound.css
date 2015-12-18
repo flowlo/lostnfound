@@ -47,6 +47,9 @@ div#choose {
 a{
 	font-style: italic;
 	cursor: pointer;
+}
+
+.back{
 	font-size: 120%;
 }
 

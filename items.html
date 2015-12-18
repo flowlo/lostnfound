@@ -12,10 +12,13 @@
 <body onload="renderItems()">
 <header>lost'n'found</header>
 <h2 class="text-center" id="items_header">Found at </h2>
-<div id="subscribe">Your item is not listed? Subscribe to this event to get notified as more items are found!</div>
+<div class="text-center">
+	<a id="subscribe" data-target="#subscribe_popup" data-toggle="modal">
+		Your item is not listed? Subscribe to this event to get notified as more items are found!</a>
+</div>
 <div id="items"></div>
 <div class="text-center">
-	<a href="index.html">Back</a>
+	<a class="back" href="index.html">Back</a>
 </div>
 <footer>
 	<a href="mailto:problem@lostnfound.nope?Subject=LostnFound%20Problem">Report a Problem</a> &middot; Legals
@@ -31,6 +34,23 @@
 					<input id="answer" autofocus class="form-control" type="text" onkeydown="keydown(event, 'items')"/>
 				</div>
 				<button class="btn btn-block btn-success" onclick="submitAnswer()">Check</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="subscribe_popup" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="row well text-center">
+			<div class="span6">
+				<h2 class="text-center">Subscribe to the event to get notifications about newly found items.</h2>
+				<div class="form-group">
+					<input id="email" autofocus placeholder="Enter your Email" class="form-control"
+						   type="email" onkeydown="keydown(event, 'subscribe')"/>
+				</div>
+				<p id="err"></p>
+				<button class="btn btn-block btn-success" onclick="submitSub()">Subscribe</button>
+				<small>Fur further information, read the email we send you after subscribing. Unsubscribing is possible!</small>
 			</div>
 		</div>
 	</div>
@@ -52,6 +72,17 @@
 		<div class="row well">
 			<div class="span6">
 				<h2 class="text-center">Wrong answer!</h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="subscription_success" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="row well">
+			<div class="span6">
+				<h2 class="text-center">Thank you for subscribing to this event.
+					We will send you the next steps in email right away.</h2>
 			</div>
 		</div>
 	</div>
