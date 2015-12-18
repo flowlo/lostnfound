@@ -138,6 +138,8 @@ function submitSub(){
 function submitMain(omniValue){
 	if (window.location.hash == '#lost') {
 		window.location.href = 'items.html#' + omniValue;
+	} else if (window.location.hash == '#found'){
+		window.location.href = 'found.html#' + omniValue;
 	}
 }
 

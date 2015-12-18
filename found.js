@@ -1,4 +1,8 @@
 
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({trigger: 'focus hover'});
+});
+
 var validationQuestions = 0;
 
 function verboseswitch(element){
@@ -26,12 +30,14 @@ function addQuestion(){
     var question = document.createElement('input');
     question.id="q"+validationQuestions;
     question.type="text";
+    question.className += 'form-control';
     question.placeholder="Ask something only the owner knows. E.g. ID-number in case of a lost ID.";
 
     row.appendChild(question);
 
     var answer = document.createElement('input');
     answer.id="a"+validationQuestions;
+    answer.className += 'form-control';
     answer.placeholder="Answer to the validation Question.";
     row.appendChild(answer);
 }
@@ -45,4 +51,9 @@ function validateQuestions(){
   }else{
     addButton.classList.remove('hide');
   }
+}
+
+function loadFound(){
+    var event = window.location.hash.substring(1);
+    $('#header')[0].textContent += event;
 }

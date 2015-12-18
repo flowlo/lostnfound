@@ -1,3 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic);
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lora', serif;
+}
+
 body#found form input{
     display:block;
     width:100%;
@@ -17,6 +25,8 @@ body#found form label.normal-mode span.shortLabel {
     font-weight:normal;
 
     color:gray;
+
+    margin: 5px 0;
 
 }
 
@@ -40,4 +50,15 @@ body#found form label.verbose-mode span.detailedLabel {
 
 body#found form label span.glyphicon{
   cursor: pointer;
+}
+
+header{
+    display: block;
+    position: relative;
+    top: 10%;
+    font-size: 300%;
+    font-weight: bold;
+    width: calc(100% - 40px);
+    text-align: center;
+    margin: 20px;
 }

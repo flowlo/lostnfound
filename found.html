@@ -6,52 +6,50 @@
   <link rel="stylesheet" type="text/css" href="lostnfound.css" />
 	<link rel="stylesheet" type="text/css" href="found.css" />
   <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="found.js"></script>
 </head>
 
 
-<body id="found">
-  <header>I Found Something...</header>
+<body id="found" onload="loadFound()">
+<header>lost'n'found</header>
+  <header id="header">I Found Something at </header>
   <div class="container">
-    <form>
+    <form class="well form-group">
       <div class="row">
         <label for="description" class="normal-mode">
           <span class="shortLabel">
-            Shortly describe what you've found...
-            <span class="glyphicon glyphicon-info-sign" onclick="verboseswitch(this)"></span>
-          </span>
-          <span class="detailedLabel">
-            Give a short description on what you have found.</br>
-            This helps the owner getting the lost item back...
+            Shortly describe what you've found
+            <span class="glyphicon glyphicon-info-sign"
+                  data-toggle="popover"
+                  data-placement="top"
+                  data-content="Give a short description on what you have found.This helps the owner getting the lost item back..."></span>
           </span>
         </label>
-        <input id="description" type="text", placeholder="Shortly describe what you've found..">
+        <input id="description" class="form-control" type="text", placeholder="Shortly describe what you've found..">
       </div>
       <div id="validationQuestions">
         <div class="row validation">
             <label for="description" class="normal-mode">
               <span class="shortLabel">
                 Ask a Question
-                <span class="glyphicon glyphicon-info-sign"  onclick="verboseswitch(this)"></span>
-              </span>
-              <span class="detailedLabel">
-                Give a short description on what you have found.</br>
-                This helps the owner getting the lost item back...
+                <span class="glyphicon glyphicon-info-sign" data-toggle="popover"
+                      data-placement="top"
+                      data-content="Give a short description on what you have found.This helps the owner getting the lost item back..."></span>
               </span>
             </label>
-            <input id="q0" type="text", placeholder="Ask something only the owner knows. E.g. ID-number in case of a lost ID." required>
+            <input id="q0" class="form-control" type="text", placeholder="Ask something only the owner knows. E.g. ID-number in case of a lost ID." required>
 
             <label for="description" class="normal-mode">
               <span class="shortLabel ">
                 Validation Answer
-              <span class="glyphicon glyphicon-info-sign"  onclick="verboseswitch(this)"></span>
+              <span class="glyphicon glyphicon-info-sign" data-toggle="popover"
+                    data-placement="top"
+                    data-content="Answer to the validation Question.E.g. ID-nr or birthday, in case of a lost ID."></span>
               </span>
-                <span class="detailedLabel">
-                  Answer to the validation Question.</br>
-                  E.g. ID-nr or birthday, in case of a lost ID.
-                </span>
               </label>
-              <input id="a0" type="text", placeholder="Answer to the validation Question." onchange="validateQuestions()" required>
+              <input id="a0" class="form-control" type="text", placeholder="Answer to the validation Question." onchange="validateQuestions()" required>
           </div>
         </div>
         <div class="row">
@@ -62,18 +60,16 @@
         <label for="info" class="normal-mode">
           <span class="shortLabel">
             Contact info for successfuly validated users
-            <span class="glyphicon glyphicon-info-sign"  onclick="verboseswitch(this)"></span>
+            <span class="glyphicon glyphicon-info-sign"data-toggle="popover"
+                  data-placement="top"
+                  data-content="Tell the owner how to contact you.This Message will be shown if someone answers all validation questions correctly."></span>
           </span>
-          <span class="detailedLabel">
-            Tell the owner how to contact you.</br>
-            This Message will be shown if someone answers all validation questions correctly.
-          </span>
-          <textarea id="info" name="info" placeholder="Tell the owner how to contact you. This Message will be shown if someone answers all validation questions correctly." required></textarea>
+          <textarea id="info" class="form-control" name="info" placeholder="Tell the owner how to contact you. This Message will be shown if someone answers all validation questions correctly." required></textarea>
         </label>
       </div>
 
       <div class="row">
-        <input type="submit" value="Submit"/>
+        <input type="submit" class="form-control btn btn-success" value="Submit"/>
       </div>
     </form>
   </div>
