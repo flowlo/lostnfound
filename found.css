@@ -1,0 +1,43 @@
+body#found form input{
+    display:block;
+    width:100%;
+}
+
+
+body#found form textarea{
+    display:block;
+    width:100%;
+}
+
+
+body#found form label.normal-mode span.shortLabel {
+    display:block;
+
+    font-size: 12pt;
+    font-weight:normal;
+
+    color:gray;
+
+}
+
+body#found form label.normal-mode span.detailedLabel {
+    display:none;
+}
+
+body#found form label.verbose-mode span.shortLabel {
+    display:none;
+
+}
+
+body#found form label.verbose-mode span.detailedLabel {
+    display:block;
+
+    font-size: 12pt;
+    font-weight:normal;
+
+    color:gray;
+}
+
+body#found form label span.glyphicon{
+  cursor: pointer;
+}

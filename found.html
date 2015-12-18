@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>lost'n'found - I Found Something</title>
+  <link rel="stylesheet" type="text/css" href="lostnfound.css" />
+	<link rel="stylesheet" type="text/css" href="found.css" />
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <script type="text/javascript" src="found.js"></script>
+</head>
+
+
+<body id="found">
+  <header>I Found Something...</header>
+  <div class="container">
+    <form>
+      <div class="row">
+        <label for="description" class="normal-mode">
+          <span class="shortLabel">
+            Shortly describe what you've found...
+            <span class="glyphicon glyphicon-info-sign" onclick="verboseswitch(this)"></span>
+          </span>
+          <span class="detailedLabel">
+            Give a short description on what you have found.</br>
+            This helps the owner getting the lost item back...
+          </span>
+        </label>
+        <input id="description" type="text", placeholder="Shortly describe what you've found..">
+      </div>
+      <div id="validationQuestions">
+        <div class="row validation">
+            <label for="description" class="normal-mode">
+              <span class="shortLabel">
+                Ask a Question
+                <span class="glyphicon glyphicon-info-sign"  onclick="verboseswitch(this)"></span>
+              </span>
+              <span class="detailedLabel">
+                Give a short description on what you have found.</br>
+                This helps the owner getting the lost item back...
+              </span>
+            </label>
+            <input id="q0" type="text", placeholder="Ask something only the owner knows. E.g. ID-number in case of a lost ID." required>
+
+            <label for="description" class="normal-mode">
+              <span class="shortLabel ">
+                Validation Answer
+              <span class="glyphicon glyphicon-info-sign"  onclick="verboseswitch(this)"></span>
+              </span>
+                <span class="detailedLabel">
+                  Answer to the validation Question.</br>
+                  E.g. ID-nr or birthday, in case of a lost ID.
+                </span>
+              </label>
+              <input id="a0" type="text", placeholder="Answer to the validation Question." onchange="validateQuestions()" required>
+          </div>
+        </div>
+        <div class="row">
+          <span id="add" class="glyphicon glyphicon-plus hide"  onclick="addQuestion(this)"></span>
+        </div>
+
+      <div class="row">
+        <label for="info" class="normal-mode">
+          <span class="shortLabel">
+            Contact info for successfuly validated users
+            <span class="glyphicon glyphicon-info-sign"  onclick="verboseswitch(this)"></span>
+          </span>
+          <span class="detailedLabel">
+            Tell the owner how to contact you.</br>
+            This Message will be shown if someone answers all validation questions correctly.
+          </span>
+          <textarea id="info" name="info" placeholder="Tell the owner how to contact you. This Message will be shown if someone answers all validation questions correctly." required></textarea>
+        </label>
+      </div>
+
+      <div class="row">
+        <input type="submit" value="Submit"/>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
