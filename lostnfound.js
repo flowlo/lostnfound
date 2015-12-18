@@ -33,13 +33,13 @@ function chooser(hash) {
 }
 
 var items = [
-	item('Braune Geldbörse (incl. eCard und Führerschein) leider ohne Bargeld', ['In welchem Jahr wurde der Führerschein ausgestellt?', 'Wie lautet die Sozialversicherungsnummer auf der E-Card?'], ['123456', '123456'], 'Bitte schreib\' mir eine E-Mail an finder@example.com! Bin erst wieder ab 6. Jänner in Wien!', '2015-12-17'),
-	item('Olivgrüne Jacke', ['Von welcher Marke ist die Jacke?'], ['DKNY'], 'Bin unter \'Die Finderin\' auf Facebook, einfach anschreiben!', '2015-12-18', 'http://lorempixel.com/100/100/abstract/'),
-
+	item('K.I.Z. @ Gasometer', 'Braune Geldbörse (incl. eCard und Führerschein) leider ohne Bargeld', ['In welchem Jahr wurde der Führerschein ausgestellt?', 'Wie lautet die Sozialversicherungsnummer auf der E-Card?'], ['123456', '123456'], 'Bitte schreib\' mir eine E-Mail an finder@example.com! Bin erst wieder ab 6. Jänner in Wien!', '2015-12-17'),
+	item('K.I.Z. @ Gasometer', 'Olivgrüne Jacke', ['Von welcher Marke ist die Jacke?'], ['DKNY'], 'Bin unter \'Die Finderin\' auf Facebook, einfach anschreiben!', '2015-12-18', 'http://lorempixel.com/100/100/abstract/'),
 ];
 
-function item(description, questions, answers, contact, date, picture) {
+function item(event, description, questions, answers, contact, date, picture) {
 	return {
+		event : event,
 		description: description,
 		questions: questions,
 		answers: answers,
@@ -50,9 +50,15 @@ function item(description, questions, answers, contact, date, picture) {
 }
 
 function renderItems() {
+
+	$('#items_header')[0].textContent = window.location.hash;
+	var event = window.location.hash.substring(1);
+
 	var parent = document.getElementById('items');
 	for (var i = 0; i < items.length; i++) {
-		parent.appendChild(itemNode(items[i]));
+		if (items[i].event == event) {
+			parent.appendChild(itemNode(items[i]));
+		}
 	}
 }
 
@@ -101,10 +107,18 @@ function setQuestion(index, item){
 	$("#question_holder")[0].textContent = item.questions[index];
 }
 
-function keydown(event){
+function keydown(event, page){
 	if (event.keyCode == 13){
-		submitAnswer();
+		if (page == 'index'){
+			submitMain($("#omni")[0].value);
+		} else if (page == 'items') {
+			submitAnswer();
+		}
 	}
+}
+
+function submitMain(omniValue){
+	window.location.href = 'items.html#' + omniValue;
 }
 
 function submitAnswer(){

@@ -17,7 +17,7 @@
 	</div>
 	<div id="search">
 		<p id="label"></p>
-		<input id="omni" type="text" list="events"/>
+		<input id="omni" type="text" list="events" onselect="submitMain(value)" onkeydown="keydown(event, 'index')"/>
 		<datalist id="events">
 			<option value="K.I.Z. @ Gasometer">
 			<option value="KLUBNACHT @ Pratersauna">

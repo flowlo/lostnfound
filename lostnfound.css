@@ -44,6 +44,16 @@ div#choose {
 	padding-bottom: 30%;
 }
 
+a{
+	font-style: italic;
+	cursor: pointer;
+	font-size: 120%;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-style: italic;
+}
+
 div#search {
 	position: relative;
 	width: 100%;
