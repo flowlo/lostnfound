@@ -60,6 +60,9 @@ function itemNode(item) {
 	var div = document.createElement('div');
 	div.className = 'item';
 	div.dataset.item = JSON.stringify(item);
+	div.onclick = function() {
+		itemClick(this);
+	};
 
 	div.appendChild(paragraph(item.description));
 	div.appendChild(paragraph(item.date));
@@ -71,6 +74,24 @@ function itemNode(item) {
 	}
 
 	return div;
+}
+
+function itemClick(element) {
+	var item = JSON.parse(element.dataset.item);
+
+	if (item.questions.length !== item.answers.length) {
+		console.log('Number of questions does not match number of answers!');
+		return;
+	}
+
+	for (var i = 0; i < item.questions.length; i++){
+		if (prompt(item.questions[i]) !== item.answers[i]) {
+			alert('Wrong answer!');
+			return;
+		}
+	}
+
+	alert(item.contact);
 }
 
 function paragraph(textContent) {
