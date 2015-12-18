@@ -35,6 +35,8 @@ function chooser(hash) {
 var items = [
 	item('K.I.Z. @ Gasometer', 'Braune Geldbörse (incl. eCard und Führerschein) leider ohne Bargeld', ['In welchem Jahr wurde der Führerschein ausgestellt?', 'Wie lautet die Sozialversicherungsnummer auf der E-Card?'], ['123456', '123456'], 'Bitte schreib\' mir eine E-Mail an finder@example.com! Bin erst wieder ab 6. Jänner in Wien!', '2015-12-17', 'pictures/wallet.jpg'),
 	item('K.I.Z. @ Gasometer', 'Olivgrüne Jacke', ['Von welcher Marke ist die Jacke?'], ['DKNY'], 'Bin unter \'Die Finderin\' auf Facebook, einfach anschreiben!', '2015-12-18', 'pictures/jacket.jpg'),
+	item('Heartbreak Hotel @ U4', 'Gelber Wollschal', ['Wo hast du den Schal gekauft?'], ['H&M'], 'https://encrypt.to/paranoia@example.com', '2015-12-18'),
+	item('Heartbreak Hotel @ U4', 'Trinkflasche', ['Wie groß ist das Fassungsvermögen der Flasche?'], ['1l'], 'https://encrypt.to/paranoia@example.com', '2015-12-18', 'pictures/bottle.jpg')
 ];
 
 function item(event, description, questions, answers, contact, date, picture) {
