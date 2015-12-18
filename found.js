@@ -50,8 +50,6 @@ function addQuestion(){
 
 function validateQuestions(){
   var addButton = document.getElementById('add');
-  console.log(validationQuestions);
-
   if(document.getElementById('q'+validationQuestions).value===''|| document.getElementById('a'+validationQuestions).value===''){
       addButton.classList.add('hide');
   }else{
