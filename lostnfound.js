@@ -53,11 +53,17 @@ function renderItems() {
 	var event = window.location.hash.substring(1);
 	$('#items_header')[0].textContent += event;
 
+	var itemAdded = false;
 	var parent = document.getElementById('items');
 	for (var i = 0; i < items.length; i++) {
 		if (items[i].event == event) {
 			parent.appendChild(itemNode(items[i]));
+			itemAdded = true;
 		}
+	}
+
+	if (!itemAdded) {
+		document.getElementById('subscribe').textContent = 'Sorry, there were no items found for that event. Anyway, you can still subscribe to this event to get notified as soon as an item is found!';
 	}
 }
 
